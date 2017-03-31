@@ -1,284 +1,339 @@
-body,
-ul,
-li,
-ol,
-dl,
-dt,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-form {
+* {
   margin: 0;
   padding: 0;
+}
+ul,
+li {
   list-style: none;
 }
-a {
-  text-decoration: none;
+body,
+html {
+  width: 100%;
+  height: 100%;
 }
-img {
-  border: none;
+body {
+  background: url(../images/bg.png) no-repeat center center / cover;
+  overflow: hidden;
 }
 * {
   box-sizing: border-box;
 }
-html,
-body {
-  height: 100%;
-  overflow: hidden;
+.nav {
+  perspective: 1300;
+  -webkit-perspective: 1300;
 }
-ul.nav_box {
-  position: fixed;
+.boxList {
+  position: absolute;
+  left: 50%;
+  width: 630px;
+  height: 630px;
+  margin-left: -315px;
+  transition: all 2s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /*animation: a1 2s 1;*/
+}
+.boxList li {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s 0.1s;
+  background: #196acc;
+  text-align: center;
+  line-height: 200px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.boxList li img {
+  width: 50%;
+  vertical-align: middle;
+  transition: all 1s;
+  transform-origin: center center;
+}
+.on li:hover {
+  -webkit-transform: translate3d(0, 0, 30px);
+  transform: translate3d(0, 0, 30px);
+  background: #ffffff;
+  box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.5);
+}
+.on li:hover img {
+  transform: rotateX(-90deg) rotateY(45deg) translate3d(-20%, -50%, -20%);
+}
+.on {
+  transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+  webkit-transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+}
+.boxList li img.active {
+  transform: rotateX(-90deg) rotateY(45deg) translate3d(0, -50%, 0);
+}
+div.moudle {
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 99;
   width: 100%;
-  height: auto;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999999;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: all 1s;
 }
-ul.nav_box li {
-  line-height: 2;
+div.moudle .container {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  min-width: 768px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
 }
-ul.nav_box li a {
-  display: block;
-  text-align: center;
-  color: #eee;
-  transition: all .2s;
-}
-ul.nav_box li a span {
-  transition: all .2s;
-}
-ul.nav_box li a:hover span.left {
-  margin-right: 1em;
-}
-ul.nav_box li a:hover span.right {
-  margin-left: 1em;
-}
-@media screen and (min-width: 768px) {
-  ul.nav_box {
-    width: 100%;
-    height: auto;
-    text-align: justify;
-  }
-  ul.nav_box li {
-    float: left;
-    width: 25%;
-  }
-  ul.nav_box li a {
-    line-height: 2.5;
-    font-weight: bold;
-  }
-}
-div.view {
+div.moudle .container .inner {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #000;
 }
-div.view .part {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotateX(90deg);
-  opacity: 0;
-  transform-origin: 0 0;
-  transition: all .5s;
-}
-div.view .part.active {
-  z-index: 1;
-  opacity: 1;
-  transform: rotateX(0deg);
-}
-div.view .part .inner {
-  width: 100%;
-  height: auto;
-  transition: all 1s;
-}
-div.view .part .inner .item {
-  width: 100%;
-  padding: 30px 15px;
-}
-@media screen and (min-width: 768px) {
-  div.view .part .inner .item {
-    padding: 100px;
-  }
-}
-div.home {
-  width: 100%;
-  height: 100%;
-  background: url(../images/home1.jpeg) no-repeat 25% 50% / cover;
-}
-div.home .inner {
-  width: 100%;
-  height: auto;
-}
-div.home .inner .item {
-  width: 100%;
-  padding: 30px 15px;
-}
-div.home .inner .item1 {
+div.moudle .container .inner h1 {
+  margin: 10px;
   color: #fff;
   text-align: center;
 }
-div.home .inner .item1 div.pic {
-  display: inline-block;
+div.moudle.active {
+  animation: jinchang 1s cubic-bezier(0.94, 0.33, 0.2, 1.45) forwards;
+}
+@keyframes jinchang {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+div.skill .container .inner {
+  width: 100%;
+  height: 100%;
+}
+div.skill .container .inner h1 {
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+}
+div.skill .container .inner ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.skill .container .inner ul li {
+  position: relative;
+  float: left;
+  width: 268px;
+  height: 268px;
+}
+div.skill .container .inner ul li div.box {
+  position: absolute;
+  top: 34px;
+  left: 34px;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  background: #fff;
-}
-div.home .inner .item1 .name {
-  margin-top: 30px;
-  line-height: 50px;
-}
-div.home .inner .item1 .job {
-  margin-top: 30px;
-  line-height: 50px;
-}
-div.home .inner .item1 .welcome {
-  margin-top: 30px;
-  line-height: 50px;
-}
-div.home .inner .item2 {
-  color: #fff;
-}
-div.home .inner .item2 h1.title {
-  font-size: 20px;
-}
-div.home .inner .item2 div.box {
-  overflow: hidden;
-}
-div.home .inner .item2 div.box .info {
-  background: url(../images/bg2.jpg) no-repeat center center;
-  background-size: cover;
-  float: left;
-  width: 100%;
-  height: 220px;
-  padding-left: 50px;
-  padding-top: 50px;
-}
-div.home .inner .item2 div.box .info p {
-  margin: 0;
-  font-size: 12px;
-  color: #333;
-  line-height: 20px;
-}
-div.home .inner .item2 div.box .info p strong {
-  display: inline-block;
-  width: 5em;
-  text-align: justify;
-}
-div.home .inner .item2 div.box .github {
-  float: left;
-  width: 100%;
-  height: 220px;
-  background: url(../images/github.jpg) no-repeat center center / cover;
-}
-div.home .inner .item2 div.box .github a {
-  display: block;
-}
-@media screen and (min-width: 768px) {
-  div.home .inner .item {
-    padding: 100px 100px;
-  }
-  div.home .inner .item .welcome {
-    font-size: 64px;
-  }
-  div.home .inner .item2 h1.title {
-    font-size: 32px;
-  }
-  div.home .inner .item2 div.box {
-    margin-top: 50px;
-  }
-  div.home .inner .item2 div.box .info {
-    width: 50%;
-    padding-left: 100px;
-  }
-  div.home .inner .item2 div.box .info p {
-    font-size: 16px;
-  }
-  div.home .inner .item2 div.box div.github {
-    width: 50%;
-  }
-}
-div.aboutme {
-  width: 100%;
-  height: 100%;
-  background: url(../images/aboutme.png) no-repeat 25% 50% / cover;
-}
-div.aboutme .inner {
-  width: 100%;
-  height: auto;
-}
-div.aboutme .inner .item2 h1.title {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #fff;
-}
-div.aboutme .inner .item2 ul.list {
-  overflow: hidden;
-}
-div.aboutme .inner .item2 ul.list li {
-  float: left;
-  width: 33.33333%;
-  padding: 20px;
-}
-div.aboutme .inner .item2 ul.list li img {
-  width: 100%;
+  -webkit-perspective: 500;
+  -moz-perspective: 500;
+  -ms-perspective: 500;
+  perspective: 500;
+  -ms-transform: perspective(500px);
+  -moz-transform: perspective(500px);
+  transform-style: preserve-3d;
   transition: all .5s;
 }
-div.aboutme .inner .item2 ul.list li img:hover {
-  transform: scale3d(1.2, 1.2, 0);
+div.skill .container .inner ul li div.box div.front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  z-index: 2;
 }
-div.aboutme .inner .item1 h1.title {
+div.skill .container .inner ul li div.box div.front img {
+  width: 100%;
+}
+div.skill .container .inner ul li div.box div.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+div.skill .container .inner ul li:hover div.box {
+  transform: rotateY(-180deg);
+}
+div.me .container .inner {
+  color: #fff;
+}
+div.me .container .inner div.box {
+  width: 100%;
+  height: 540px;
+  padding: 0 10%;
+}
+div.me .container .inner div.box .right {
+  float: right;
+  width: 20%;
+  height: 100%;
+  background: url(../images/me.jpg) no-repeat center top / cover;
+}
+div.me .container .inner div.box .left {
+  float: left;
+  height: 100%;
+}
+div.contact .container .inner form {
+  width: 80%;
+  height: 80%;
+  border: 1px dotted #0067ff;
+  margin: 20px auto 0;
+  padding-left: 50px;
+}
+div.contact .container .inner form input {
+  display: block;
+  border: 0;
+  color: #ccc;
+  width: 60%;
+  margin: 30px 0;
+  padding-left: 2em;
+  background: #333;
+  line-height: 30px;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+div.contact .container .inner form input:hover {
+  border: 1px solid #0067ff;
+}
+div.contact .container .inner form input[type="button"] {
+  width: auto;
+  height: auto;
+  padding: 0 2em;
+  border: 2px dotted #0067ff;
+  margin-left: 320px;
+}
+div.contact .container .inner form input[type="button"]:hover {
+  background: #ccc;
+  color: #333;
+  border-style: solid;
+}
+div.contact .container .inner form textarea {
+  display: block;
+  border: 0;
+  color: #ccc;
+  width: 60%;
+  height: 150px;
+  margin: 30px 0;
+  padding-left: 2em;
+  background: #333;
+  line-height: 30px;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+div.contact .container .inner form textarea:hover {
+  border: 1px solid #0067ff;
+}
+div.thank .container .inner h1 {
+  margin-top: 100px;
+}
+div.thank .container .inner h2 {
+  color: #fff;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 64px;
+}
+div.item .container .inner,
+div.work .container .inner {
+  overflow: hidden;
+}
+div.item .container .inner ul,
+div.work .container .inner ul {
+  margin: 0 auto;
+  width: 80%;
+}
+div.item .container .inner ul li,
+div.work .container .inner ul li {
+  margin-bottom: 30px;
+  width: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+div.item .container .inner ul li a.pic,
+div.work .container .inner ul li a.pic {
+  margin-left: 5px;
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+div.item .container .inner ul li div.info,
+div.work .container .inner ul li div.info {
+  float: right;
+  margin-right: 5px;
+  width: 600px;
+  height: 200px;
+  color: #fff;
+  padding: 20px;
+}
+div.item .container .inner ul li div.info p.title,
+div.work .container .inner ul li div.info p.title {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
+  padding-left: 100px;
+  transition: all .2s;
+  transform: translate3d(0, 50px, 0);
+}
+div.item .container .inner ul li div.info p.introduce,
+div.work .container .inner ul li div.info p.introduce {
   margin-top: 20px;
-  font-size: 20px;
-  color: #fff;
-}
-div.aboutme .inner .item1 div.box {
-  width: 100%;
-}
-div.aboutme .inner .item1 div.box pre {
-  text-align: justify;
-  font-size: 12px;
-  color: #fff;
+  font-size: 16px;
   text-indent: 2em;
-  white-space: normal;
+  line-height: 1.5;
+  transition: all .2s;
+  transform: scale(0, 0) translate3d(0, 50px, 0);
+  opacity: 0;
 }
-@media screen and (min-width: 768px) {
-  div.aboutme .inner .item2 h1 {
-    font-size: 32px;
-  }
-  div.aboutme .inner .item2 ul.list li {
-    width: 25%;
-    padding: 50px 80px;
-  }
-  div.aboutme .inner .item2 ul.list li img {
-    border-radius: 50%;
-  }
-  div.aboutme .inner .item2 ul.list li:last-child {
-    display: none;
-  }
+div.item .container .inner ul li div.info p.job,
+div.work .container .inner ul li div.info p.job {
+  margin-top: 20px;
+  font-size: 16px;
+  text-indent: 2em;
+  line-height: 1.5;
+  transition: all .2s;
+  transform: scale(0, 0) translate3d(0, 50px, 0);
+  opacity: 0;
 }
-div.project {
-  width: 100%;
-  height: 100%;
-  background: url(../images/projectDisplay.jpg) no-repeat 75% 50% / cover;
+div.item .container .inner ul li:hover,
+div.work .container .inner ul li:hover {
+  border: 2px solid #0067ff;
 }
-div.project .inner {
-  width: 100%;
-  height: auto;
+div.item .container .inner ul li:hover div.info p.title,
+div.work .container .inner ul li:hover div.info p.title {
+  font-size: 24px;
+  transform: translate3d(0, 0, 0);
+  padding-left: 0;
 }
-div.works {
-  width: 100%;
-  height: 100%;
-  background: url(../images/smallWorks1.jpeg) no-repeat 40% 30% / cover;
+div.item .container .inner ul li:hover div.info p.introduce,
+div.work .container .inner ul li:hover div.info p.introduce {
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  opacity: 1;
 }
-div.works .inner {
-  width: 100%;
-  height: auto;
+div.item .container .inner ul li:hover div.info p.job,
+div.work .container .inner ul li:hover div.info p.job {
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  opacity: 1;
 }

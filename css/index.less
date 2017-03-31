@@ -1,302 +1,273 @@
-// out: index.css,compress:false,sourcemap:false
-body,
-ul,li,ol,
-dl,dt,dd,
-h1,h2,h3,h4,h5,h6,
-input,form {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+// out: index.css,sompress:true,sourcemap:false
+*{margin: 0; padding: 0;}
+ul,li{list-style: none;}
+
+body,html {
+  width: 100%;
+  height: 100%;
 }
-a {
-  text-decoration: none;
-}
-img {
-  border: none;
+
+body {
+  background: url(../images/bg.png) no-repeat center center/cover;
+  overflow: hidden;
 }
 * {
   box-sizing: border-box;
 }
 
 
+/////////////////////////////导航部分
+  .nav {
+    perspective: 1300;
+    -webkit-perspective:1300;
+  }
+  .boxList {
+    position:absolute;
+    left:50%;
+    width: 630px;
+    height:630px;
+    margin-left:-315px;
+    transition: all 2s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;/*animation: a1 2s 1;*/
+  }
+  .boxList li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin:5px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s 0.1s;
+    background: #196acc;
+    text-align: center;
+    line-height: 200px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    img {
+      width: 50%;
+      vertical-align: middle;
+      transition: all 1s;
+      transform-origin: center center;
+    }
+  }
+  .on li:hover {
+    -webkit-transform: translate3d(0,0,30px);
+    transform: translate3d(0,0,30px);
+    background:#ffffff;
+    box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.5);
+    img {
+      transform: rotateX(-90deg) rotateY(45deg) translate3d(-20%,-50%,-20%);
+    }
+  }
+  .on {
+    transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+    webkit-transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+  }
+  .boxList li img.active {
+    transform: rotateX(-90deg) rotateY(45deg) translate3d(0,-50%,0);
+  }
 
 
-html,body {
-  height: 100%;
-  overflow: hidden;
-}
 
-
-
-//------------------nav
-ul.nav_box {
-  position: fixed;
+//////////////////////////////////moudle
+div.moudle {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: auto;
-  background: rgba(0, 0, 0, .5);
-  z-index: 999999;
-  li {
-    line-height: 2;
-    a {
-      display: block;
-      text-align: center;
-      color: #eee;
-      transition: all .2s;
-      span {
-        transition: all .2s;
-      }
-      &:hover {
-        span.left {
-          margin-right: 1em;
-        }
-        span.right {
-          margin-left: 1em;
-        }
-      }
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  ul.nav_box {
-    width: 100%;
-    height: auto;
-    text-align: justify;
-    li {
-      float: left;
-      width: 25%;
-      a {
-        line-height: 2.5;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-
-
-
-
-//---------------------div.view
-div.view {
-  position: relative;
+  z-index: 99;
   width: 100%;
   height: 100%;
-  background: #000;
-  .part {
+  transform: translateX(-100%);
+  transition: all 1s;
+  .container {
     position: absolute;
-    width: 100%;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    min-width: 768px;
     height: 100%;
-    transform: rotateX(90deg);
-    opacity: 0;
-    transform-origin: 0 0;
-    transition: all .5s;
-    &.active {
-      z-index: 1;
-      opacity: 1;
-      transform: rotateX(0deg);
-    }
+    background: rgba(0, 0, 0, .8);
     .inner {
+      position: relative;
       width: 100%;
-      height: auto;
-      transition: all 1s;
-      .item {
-        width: 100%;
-        padding: 30px 15px;
-      }
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  div.view {
-    .part {
-      .inner {
-        .item {
-          padding: 100px;
-        }
-      }
-    }
-  }
-}
-
-
-//------------------div.home
-div.home {
-  width: 100%;
-  height: 100%;
-  background: url(../images/home1.jpeg) no-repeat 25% 50%/cover;
-  .inner {
-    width: 100%;
-    height: auto;
-    .item {
-      width: 100%;
-      padding: 30px 15px;
-    }
-    .item1 {
-      color: #fff;
-      text-align: center;
-      div.pic {
-        display: inline-block;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: #fff;
-      }
-      .name {
-        margin-top: 30px;
-        line-height: 50px;
-      }
-      .job {
-        margin-top: 30px;
-        line-height: 50px;
-      }
-      .welcome {
-        margin-top: 30px;
-        line-height: 50px;
-      }
-    }
-    .item2 {
-      color: #fff;
-      h1.title {
-        font-size: 20px;
-      }
-      div.box {
-        overflow: hidden;
-        .info {
-          background: url(../images/bg2.jpg) no-repeat center center;
-          background-size: cover;
-          float: left;
-          width: 100%;
-          height: 220px;
-          padding-left: 50px;
-          padding-top: 50px;
-          p {
-            margin: 0;
-            font-size: 12px;
-            color: #333;
-            line-height: 20px;
-            strong {
-              display: inline-block;
-              width: 5em;
-              text-align: justify;
-            }
-          }
-        }
-        .github {
-          float: left;
-          width: 100%;
-          height: 220px;
-          background: url(../images/github.jpg) no-repeat center center/cover;
-          a {
-            display: block;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  div.home {
-    .inner {
-      .item {
-        padding: 100px 100px;
-        .welcome {
-          font-size: 64px;
-        }
-      }
-      .item2 {
-        h1.title {
-          font-size: 32px;
-        }
-        div.box {
-          margin-top: 50px;
-          .info {
-            width: 50%;
-            padding-left: 100px;
-            p {
-              font-size:16px;
-            }
-          }
-          div.github {
-            width: 50%;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-
-
-
-//------------------div.aboutme
-div.aboutme {
-  width: 100%;
-  height: 100%;
-  background: url(../images/aboutme.png) no-repeat 25% 50%/cover;
-  .inner {
-    width: 100%;
-    height: auto;
-    .item2 {
-      h1.title {
-        margin-top: 20px;
-        font-size: 20px;
+      height: 100%;
+      h1 {
+        margin: 10px;
         color: #fff;
+        text-align: center;
       }
-      ul.list {
+    }
+  }
+  &.active {
+      animation: jinchang 1s cubic-bezier(.94,.33,.2,1.45) forwards;
+    }
+}
+@keyframes jinchang {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+////////////////////////////////me
+div.skill {
+  .container {
+    .inner {
+      width: 100%;
+      height: 100%;
+      h1 {
+        margin: 10px;
+        color: #fff;
+        text-align: center;
+      }
+      ul {
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         li {
+          position: relative;
           float: left;
-          width: 33.33333%;
-          padding: 20px;
-          img {
-            width: 100%;
+          width: 268px;
+          height: 268px;
+          div.box {
+            position: absolute;
+            top: 34px;
+            left: 34px;
+            width: 200px;
+            height: 200px;
+            -webkit-perspective: 500;
+            -moz-perspective: 500;
+            -ms-perspective: 500;
+            perspective: 500;
+            -ms-transform: perspective(500px);
+            -moz-transform: perspective(500px);
+            transform-style: preserve-3d;
             transition: all .5s;
-            &:hover {
-              transform: scale3d(1.2,1.2,0);
+            div.front {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              margin: auto;
+              backface-visibility: hidden;
+              transform: rotateY(0deg);
+              z-index: 2;
+              img {
+                width: 100%;
+              }
+            }
+            div.back {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding: 25%;
+              backface-visibility: hidden;
+              transform: rotateY(180deg);
+              text-align: center;
+              color: #fff;
+              font-size: 24px;
+            }
+          }
+
+          &:hover {
+            div.box {
+              transform: rotateY(-180deg);
             }
           }
         }
       }
     }
-    .item1 {
-      h1.title {
-        margin-top: 20px;
-        font-size: 20px;
-        color: #fff;
-      }
+  }
+}
+
+
+
+
+
+/////////////////////me
+div.me {
+  .container {
+    .inner {
+      color: #fff;
       div.box {
         width: 100%;
-        pre {
-          text-align: justify;
-          font-size: 12px;
-          color: #fff;
-          text-indent: 2em;
-          white-space: normal;
+        height: 540px;
+        padding: 0 10%;
+        .right {
+          float: right;
+          width: 20%;
+          height: 100%;
+          background: url(../images/me.jpg) no-repeat center top/cover;
+        }
+        .left {
+          float: left;
+          height: 100%;
         }
       }
     }
   }
 }
-@media screen and (min-width: 768px) {
-  div.aboutme {
+
+
+
+
+//////////////////contact
+div.contact {
+  .container {
     .inner {
-      .item2 {
-        h1 {
-          font-size: 32px;
+      form {
+        width: 80%;
+        height: 80%;
+        border: 1px dotted #0067ff;
+        margin: 20px auto 0;
+        padding-left: 50px;
+        input {
+          display: block;
+          border: 0;
+          color: #ccc;
+          width: 60%;
+          margin: 30px 0;
+          padding-left: 2em;
+          background: #333;
+          line-height: 30px;
+          font-size: 16px;
+          border: 1px solid #333;
+          &:hover {
+            border: 1px solid #0067ff;
+          }
+          &[type="button"] {
+            width: auto;
+            height: auto;
+            padding: 0 2em;
+            border: 2px dotted #0067ff;
+            margin-left: 320px;
+            &:hover {
+              background: #ccc;
+              color: #333;
+              border-style: solid;
+            }
+          }
         }
-        ul.list {
-          li {
-            width: 25%;
-            padding: 50px 80px;
-            img {
-              border-radius: 50%;
-            }
-            &:last-child {
-              display: none;
-            }
+        textarea {
+          display: block;
+          border: 0;
+          color: #ccc;
+          width: 60%;
+          height: 150px;
+          margin: 30px 0;
+          padding-left: 2em;
+          background: #333;
+          line-height: 30px;
+          font-size: 16px;
+          border: 1px solid #333;
+          &:hover {
+            border: 1px solid #0067ff;
           }
         }
       }
@@ -308,33 +279,104 @@ div.aboutme {
 
 
 
-
-
-//-----------------div.project
-div.project {
-  width: 100%;
-  height: 100%;
-  background: url(../images/projectDisplay.jpg) no-repeat 75% 50%/cover;
-  .inner {
-    width: 100%;
-    height: auto;
+/////////////////thank
+div.thank {
+  .container {
+    .inner {
+      h1 {
+        margin-top: 100px;
+      }
+      h2 {
+        color: #fff;
+        margin-top: 100px;
+        text-align: center;
+        font-size: 64px;
+      }
+    }
   }
 }
 
 
 
-
-
-
-
-
-//-----------------div.works
-div.works {
-  width: 100%;
-  height: 100%;
-  background: url(../images/smallWorks1.jpeg) no-repeat 40% 30%/cover;
-  .inner {
-    width: 100%;
-    height: auto;
+/////////////////////////////item
+div.item,div.work {
+  .container {
+    .inner {
+      
+      ul {
+        margin: 0 auto;
+        width: 80%;
+        li {
+          margin-bottom: 30px;
+          width: 100%;
+          transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
+          perspective: 600px;
+          -webkit-perspective:600px;
+          border-radius: 10px;
+          padding: 20px;
+          border: 2px solid transparent;
+          overflow: hidden;
+          a.pic {
+            margin-left: 5px;
+            float: left;
+            width: 200px;
+            height: 200px;
+          }
+          div.info {
+            float: right;
+            margin-right: 5px;
+            width: 600px;
+            height: 200px;
+            color: #fff;
+            padding: 20px;
+            p.title {
+              font-size: 36px;
+              font-weight: bold;
+              line-height: 1.5;
+              padding-left: 100px;
+              transition: all .2s;
+              transform: translate3d(0,50px,0);
+            }
+            p.introduce {
+              margin-top: 20px;
+              font-size: 16px;
+              text-indent: 2em;
+              line-height: 1.5;
+              transition: all .2s;
+              transform: scale(0,0) translate3d(0,50px,0);
+              opacity: 0;
+            }
+            p.job {
+              margin-top: 20px;
+              font-size: 16px;
+              text-indent: 2em;
+              line-height: 1.5;
+              transition: all .2s;
+              transform: scale(0,0) translate3d(0,50px,0);
+              opacity: 0;
+            }
+          }
+          &:hover {
+            border: 2px solid #0067ff;
+            div.info {
+              p.title {
+                font-size: 24px;
+                transform: translate3d(0,0,0);
+                padding-left: 0;
+              }
+              p.introduce {
+                transform: scale(1,1) translate3d(0,0,0);
+                opacity: 1;
+              }
+              p.job {
+                transform: scale(1,1) translate3d(0,0,0);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

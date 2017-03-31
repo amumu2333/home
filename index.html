@@ -4,109 +4,346 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>付军军-个人主页</title>
+  <title>付军军</title>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css">
   <script src="js/jquery.min.js" charset="utf-8"></script>
-  <script src="js/jquery.mousewheel.js" charset="utf-8"></script>
-  <script src="js/index.js" charset="utf-8"></script>
 </head>
 <body>
-
-  <!-- nav -->
-  <ul class="nav_box">
-    <li class="nav">
-      <a href="javascript:;" title="主页">
-        <span class="left">[</span>
-        Home
-        <span class="right">]</span>
-      </a>
-    </li>
-    <li class="nav">
-      <a href="javascript:;" title="关于我">
-        <span class="left">[</span>
-        About Me
-        <span class="right">]</span>
-      </a>
-    </li>
-    <li class="nav">
-      <a href="javascript:;" title="项目展示">
-        <span class="left">[</span>
-        Project Display
-        <span class="right">]</span>
-      </a>
-    </li>
-    <li class="nav">
-      <a href="javascript:;" title="我的作品">
-        <span class="left">[</span>
-        Small Works
-        <span class="right">]</span>
-      </a>
-    </li>
-  </ul>
-  <!-- end nav -->
-
-  <div class="view">
-    <div class="part home active">
-      <div class="inner">
-        <div class="item item1">
-          <div class="pic"></div>
-          <h1 class="name">Fu Junjun</h1>
-          <h2 class="job"></h2>
-          <h3 class="welcome">Welcome to my world</h3>
-        </div>
-        <div class="item item2">
-          <h1 class="title">如果您想了解我...</h1>
-          <h1 class="title">如果您想联系我...</h1>
-          <div class="box">
-            <div class="info">
-              <p><strong>名字:</strong>付军军</p>
-              <p><strong>职业:</strong>前端工程师</p>
-              <p><strong>毕业院校:</strong>太原工业学院</p>
-              <p><strong>手机号码:</strong>15235361537</p>
-              <p><strong>邮箱:</strong>1045245697@qq.com</p>
-              <p><strong>qq:</strong>1045245697</p>
-            </div>
-            <div class="github">
-              <a href=""></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="part aboutme">
-      <div class="inner">
-        <div class="item item1">
-          <h1 class="title">我的以往</h1>
-          <div class="box">
-            <pre>于2015年毕业于太原工业学院,后自学前端,并入职工作,成为一名前端工作者.参与前端制作.希望可以在工作中进一步的提升自己.</pre>
-          </div>
-          <h1 class="title">工作经验</h1>
-          <div class="box">
-            <ul>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-        <div class="item item2">
-          <h1 class="title">我可以做些什么</h1>
-          <ul class="list">
-            <li><img src="images/11.jpg" alt=""></li>
-            <li><img src="images/12.jpg" alt=""></li>
-            <li><img src="images/13.jpg" alt=""></li>
-            <li><img src="images/14.jpg" alt=""></li>
-            <li><img src="images/15.jpg" alt=""></li>
-            <li><img src="images/16.jpg" alt=""></li>
-            <li><img src="images/17.jpg" alt=""></li>
-            <li><img src="images/18.jpg" alt=""></li>
-            <li><img src="images/19.jpg" alt=""></li>
-          </ul>
-        </div>
-        <div class="item item3"></div>
-      </div>
-    </div>
-    <div class="part project"></div>
-    <div class="part works"></div>
+  <!-- 首页动画   -->
+  <div class="nav">
+    <ul class="boxList">
+      <li title="主页" class="home">
+        <img src="images/nav/主页.png" alt="">
+      </li>
+      <li title="我的基本信息" class="me">
+        <img src="images/nav/男人.png" alt="">
+      </li>
+      <li title="我可以做些什么" class="skill">
+        <img src="images/nav/html.png" alt="">
+      </li>
+      <li title="我参与的一些项目" class="item">
+        <img src="images/nav/项目.png" alt="">
+      </li>
+      <li title="闲暇小练习" class="work">
+        <img src="images/nav/键盘.png" alt="">
+      </li>
+      <li title="联系我" class="contact">
+        <img src="images/nav/邮箱.png" alt="">
+      </li>
+      <li title="工作经验" class="job">
+        <img src="images/nav/项目经验.png" alt="">
+      </li>
+      <li title="参观我的github" class="github">
+        <img src="images/nav/github.png" alt="">
+      </li>
+      <li title="期待您的友好来信" class="thank">
+        <img src="images/nav/谢谢参与.png" alt="">
+      </li>
+    </ul>
   </div>
+  <!-- end 首页动画 -->
 
+  <!-- moudle -->
+  <div class="moudle">
+    <div class="container">
+
+    </div>
+  </div>
+  <!-- end moudle -->
+
+
+
+  <!-- skill -->
+  <div class="moudle skill">
+    <div class="container">
+      <div class="inner">
+        <h1>我可以做些什么</h1>
+        <ul>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/11.jpg" alt="">
+              </div>
+              <div class="back">熟练应用css3制作各种动画效果</div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/12.jpg" alt="">
+              </div>
+              <div class="back">
+                牢固掌握html语言H5新增标签及API
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/13.jpg" alt="">
+              </div>
+              <div class="back">
+                进行快速布局,提高工作效率
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/14.jpg" alt="">
+              </div>
+              <div class="back">
+                熟悉一些复杂的动效制作
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/15.jpg" alt="">
+              </div>
+              <div class="back">
+                熟练掌握jQuery,进行DOM操作
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/16.jpg" alt="">
+              </div>
+              <div class="back">
+                清晰的业务逻辑,模块化编程
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/17.jpg" alt="">
+              </div>
+              <div class="back">
+                预编译CSS,进一步提高工作效率
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box">
+              <div class="front">
+                <img src="images/skill/18.jpg" alt="">
+              </div>
+              <div class="back">
+                预编译CSS,进一步提高工作效率
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end skill -->
+
+
+  <!-- me -->
+  <div class="moudle me">
+    <div class="container">
+      <div class="inner">
+        <h1>基本信息</h1>
+        <div class="box">
+          <div class="left">
+
+          </div>
+          <div class="right">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end me -->
+
+  <!-- contact -->
+  <div class="moudle contact">
+    <div class="container">
+      <div class="inner">
+        <h1>如果您想更深入的了解我</h1>
+        <form action="##">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Theme">
+            <textarea name="message" rows="8" cols="80" placeholder="Message..."></textarea>
+            <input type="button" value="send message">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end contact -->
+
+
+
+  <!-- thank -->
+  <div class="moudle thank">
+    <div class="container">
+      <div class="inner">
+        <h1>谢谢您的浏览</h1>
+        <h2>期待与您合作</h2>
+      </div>
+    </div>
+  </div>
+  <!-- end thank -->
+
+
+  <!-- item -->
+  <div class="moudle item">
+    <div class="container">
+      <div class="inner">
+        <h1>项目展示</h1>
+        <ul>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/item/chayue.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">茗悦国艺官方网站</p>
+              <p class="introduce">风格清新淡雅,主体鲜明,整个网页以展示内容为主</p>
+              <p class="job">参与前期设计及切图,模板制作,动效设计,交互设计,业务逻辑的编写以及MVC的架构</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/item/yuetingAPP.png) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">悦听APP</p>
+              <p class="introduce">一款音乐类型的混合APP,多种支付方式,界面优美,操作简单</p>
+              <p class="job">界面设计及编写,用户交互的优化,基于MUI平台构建,后期的项目打包.</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/item/flash.png) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">jober APP</p>
+              <p class="introduce">一款关于寻找兼职的Hybird APP</p>
+              <p class="job">基于MUI框架构建,基于MUI平台构建,利用Hbuilder打包并发行</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/item/chayue.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">茗悦国艺官方网站</p>
+              <p class="introduce">风格清新淡雅,主体鲜明,整个网页以展示内容为主</p>
+              <p class="job">参与前期设计及切图,模板制作,动效设计,交互设计,业务逻辑的编写以及MVC的架构</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/item/chayue.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">茗悦国艺官方网站</p>
+              <p class="introduce">风格清新淡雅,主体鲜明,整个网页以展示内容为主</p>
+              <p class="job">参与前期设计及切图,模板制作,动效设计,交互设计,业务逻辑的编写以及MVC的架构</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end item -->
+
+
+
+
+
+  <!-- work -->
+  <div class="moudle work">
+    <div class="container">
+      <div class="inner">
+        <h1>日常练习</h1>
+        <ul>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/icloud.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">iCloud提醒事项</p>
+              <p class="introduce">单页面应用</p>
+              <p class="job">angular.js制作的单页面应用,仿苹果iCloud应用,MVC架构,提升用户体验</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/drawing.png) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">自制小画板</p>
+              <p class="introduce">html5-canvas的学习</p>
+              <p class="job">核心功能由canvas实现,可绘制一些基本的简单的图形</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/todo.png) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">ToDoList</p>
+              <p class="introduce">模仿todolist</p>
+              <p class="job">HTML5的本地存储的练习,以及一些业务逻辑方面的练习</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/CSS3-transition.png) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">CSS3-transition</p>
+              <p class="introduce">鼠标移入,transition动画效果</p>
+              <p class="job">transform的一些变换效果:scale translate skew ...</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/icloud.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">iCloud提醒事项</p>
+              <p class="introduce">单页面应用</p>
+              <p class="job">angular.js制作的单页面应用,仿苹果iCloud应用,MVC架构,提升用户体验</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/icloud.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">iCloud提醒事项</p>
+              <p class="introduce">单页面应用</p>
+              <p class="job">angular.js制作的单页面应用,仿苹果iCloud应用,MVC架构,提升用户体验</p>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="pic" style="background:url(images/work/icloud.jpg) no-repeat center center/contain">
+
+            </a>
+            <div class="info">
+              <p class="title">iCloud提醒事项</p>
+              <p class="introduce">单页面应用</p>
+              <p class="job">angular.js制作的单页面应用,仿苹果iCloud应用,MVC架构,提升用户体验</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end work -->
+  <script src="./js/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/perfect-scrollbar.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>
