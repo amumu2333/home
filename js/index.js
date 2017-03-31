@@ -115,7 +115,8 @@
   //   $(".moudle.skill").addClass("active");
   //
   // })
-  $(".nav li").on("click",function () {
+  $(".nav li").on("click",function (e) {
+    e.stopPropagation();    
     var classname =  this.className;
     $(".moudle")
     .filter(function () {
@@ -125,6 +126,15 @@
     .siblings(".moudle")
       .removeClass("active")
   })
+
+
+  $("#back-btn").on('click', function(e) {
+      event.preventDefault();
+      $(".moudle").removeClass("active");
+  });
+      
+  
+
 
 
 
